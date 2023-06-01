@@ -2,10 +2,10 @@
 <head>
 	<link rel="stylesheet" href="main.css">
 </head>
-<body style="background-image:url(images/signup.jpg)">
+<body style="background-image:url(p2.jpg)">
 <div class="header">
 				<ul>
-					<li style="float:left;border-right:none"><a href="cover.php" class="logo"><img src="images/cal.png" width="30px" height="30px"><strong> Skylabs </strong>Appointment Booking System</a></li>
+					<li style="float:left;border-right:none"><a href="cover.php" ><strong> BetterMentalHealth Therapy Platform</strong></a></li>
 					<li><a href="locateus.php">Locate Us</a></li>
 					<li><a href="cover.php">Home</a></li>
 				</ul>
@@ -35,11 +35,11 @@
 		<label><b>Password:</b></label><br>
 		<input type="password" placeholder="Enter Password" name="pwd" id="p1" required><br>
 
-		<label><b>Repeat Password:</b></label><br>
+		<label><b>Confirm Password:</b></label><br>
 		<input type="password" placeholder="Repeat Password" name="pwdr" id="p2" required><br>
 		<p style="color:white">By creating an account you agree to our <a href="#" style="color:blue">Terms & Conditions</a>.</p><br>
 
-		<div class="container" style="background-color:grey">
+		<div class="container" style="background-color:#0a0944">
 			<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
 			<button type="submit" name="signup" style="float:right">Sign Up</button>
 		</div>

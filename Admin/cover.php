@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
-<body style="background-image:url(p2.jpg)">
+<body style="background-color: #f96d00" >
 <link rel="stylesheet" href="main.css">
 			<div class="header">
 				<ul>
-					<li style="float:left;border-right:none"><a href="cover.php" class="logo"><img src="cal.png" width="30px" height="30px"><strong> Skylabs </strong>Appointment Booking System</a></li>
+					<li style="float:left;border-right:none"><a href="cover.php" > <strong> BetterMentalHealth Therapy Platform</strong></a></li>
 					<li><a href="locateus.php">Locate Us</a></li>
 					<li><a href="#home">Home</a></li>
 				</ul>
 			</div>
 			<div class="center">
-				<h1>Skylabs</h1><br>
-				<p style="text-align:center;color:black;font-size:30px;top:35%">Online Appointment Booking System</p><br>
-				<button onclick="document.getElementById('id01').style.display='block'" style="position:absolute;top:50%;left:50%">Login</button>
+				<br>
+				<p style="text-align:center;color:black;Font-family: Serif;font-size:60px;top:45%">Your Wellness Is Our Happiness. <br> It's okay to feel unstable. <br> It's okay to disassociate. <br> It's okay to hide from the world. <br>
+			It's okay to need help. <br> It's okay not to be okay.</p>
+				<br>
+				<button onclick="document.getElementById('id01').style.display='block'" style="position:absolute;top:85%;left:50%">Login</button>
 				
 			</div>	
 			<div class="footer">
-				<ul style="position:absolute;top:93%;background-color:black">
+				<ul style="position:absolute;top:93%;background-color:#005792">
 					<li><a href="alogin.php">Admin Login</a></li>
 					<li><a href="mlogin.php">Manager Login</a></li>
 				</ul>
@@ -37,12 +39,12 @@
       <input type="password" placeholder="Enter Password" name="psw" required>
 		<button type="submit" name="login">Login</button>
 		
-      <input type="checkbox" checked="checked"> Remember me
+      <input type="checkbox" checked="checked"> Remember me?
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <button onclick="document.getElementById('id02').style.display='block';document.getElementById('id01').style.display='none'" style="float:right">Don't have one?</button>
+      <button onclick="document.getElementById('id02').style.display='block';document.getElementById('id01').style.display='none'" style="float:right">Don't have an account?</button>
     </div>
   </form>
 </div>
@@ -54,14 +56,10 @@
       <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span><br>
     </div>
 
-	<div class="imgcontainer">
-      <img src="images/steps.png" alt="Avatar" class="avatar">
-    </div>
 	
     <div class="container">
-		<p style="text-align:center;font-size:18px;"><b>Sign Up -> Choose your Dates -> Book your visit</b></p>
-      <p style="text-align:center"><b>Booking an appointment has never been easier!</b></p>
-      <p style="text-align:center"><b>The 3 steps for an easier and healthy life</b></p>
+		<p style="text-align:center;font-size:18px;font-family: Arial"><b> Click on the button below to Sign Up.</b></p>
+     
 	  
     </div>
 	
