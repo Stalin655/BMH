@@ -2,7 +2,7 @@
 <head>
 	<link rel="stylesheet" href="main.css">
 </head>
-<body style="background-image:url(images/userback.jpg)">
+<body style="background-image:url(mage.jpg)">
 <div class="header">
 				<ul>
 					<li style="float:left;border-right:none"><strong><?php session_start(); echo $_SESSION['user']; ?></strong></li>
@@ -10,12 +10,12 @@
 				</ul>
 </div>
 <div class="container" style="width:100%">
-	<div class="container" style="background-image:url(images/userback.jpg)">
+	<div class="container">
 	<form method="post">
-      <button type="button" onclick="window.location.href='book.php'" style="background-color:#2B4F76">Book Appointment</button>
-	  <button type="button" onclick="window.location.href='viewpatientappointments.php'" style="background-color:#2B4F76">Show Appointments</button>
-	  <button type="submit" name="cancel" style="float:center;background-color:#2B4F76">Cancel Booking</button>
-	  <button type="submit" name="logout" style="float:right;background-color:#2B4F76">Log Out</button>
+      <button type="button" onclick="window.location.href='book.php'" style="background-color:#004a2f">Book Appointment</button>
+	  <button type="button" onclick="window.location.href='viewpatientappointments.php'" style="background-color:#002f35">Show Appointments</button>
+	  <button type="submit" name="cancel" style="float:center;background-color:#ff6337">Cancel Booking</button>
+	  <button type="submit" name="logout" style="float:right;background-color:#ffa323">Log Out</button>
 	</form>
     </div>
 </div>

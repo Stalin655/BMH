@@ -2,7 +2,7 @@
 <head>
 	<link rel="stylesheet" href="main.css">
 </head>
-<body style="background-image:url(p2.jpg)">
+<body style="background-color:#004a2f">
 <div class="header">
 				<ul>
 					<li style="float:left;border-right:none"><a href="cover.php" ><strong> BetterMentalHealth Therapy Platform</strong></a></li>
@@ -10,37 +10,36 @@
 					<li><a href="cover.php">Home</a></li>
 				</ul>
 </div>
-<form action="signup.php" method="post">
-	<div class="sucontainer">
-		<label><b>Name:</b></label><br>
+<form action="signup.php" method="post" >
+	<div class="sucontainer" style="background-color: #f05d23" >
+		<label style="color:black"><b>Name:</b></label><br>
 		<input type="text" placeholder="Enter Full Name" name="fname" required><br>
 	
-		<label><b>Date of Birth:</b></label><br>
+		<label style="color:black"><b>Date of Birth:</b></label><br>
 		<input type="date" name="dob" required><br><br>
 	
-		<label><b>Gender</b></label><br>
+		<label style="color:black"><b>Gender</b></label><br>
 		<input type="radio" name="gender" value="female">Female
 		<input type="radio" name="gender" value="male">Male
 		<input type="radio" name="gender" value="other">Other<br><br>
 		
-		<label><b>Contact No:</b></label><br>
+		<label style="color:black"><b>Contact No:</b></label><br>
 		<input type="number" placeholder="Contact Number" name="contact" required><br>
 		
-		<label><b>Username:</b></label><br>
+		<label style="color:black"><b>Username:</b></label><br>
 		<input type="text" placeholder="Create Username" name="username" required><br>
 		
-		<label><b>Email:</b></label><br>
+		<label style="color:black"><b>Email:</b></label><br>
 		<input type="email" placeholder="Enter Email" name="email" required><br>
 
-		<label><b>Password:</b></label><br>
+		<label style="color:black"><b>Password:</b></label><br>
 		<input type="password" placeholder="Enter Password" name="pwd" id="p1" required><br>
 
-		<label><b>Confirm Password:</b></label><br>
-		<input type="password" placeholder="Repeat Password" name="pwdr" id="p2" required><br>
+		<label style="color:black"><b>Confirm Password:</b></label><br>
+		<input type="password" placeholder="Confirm Password" name="pwdr" id="p2" required><br>
 		<p style="color:white">By creating an account you agree to our <a href="#" style="color:blue">Terms & Conditions</a>.</p><br>
 
-		<div class="container" style="background-color:#0a0944">
-			<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+		<div class="container" >
 			<button type="submit" name="signup" style="float:right">Sign Up</button>
 		</div>
   </div>
