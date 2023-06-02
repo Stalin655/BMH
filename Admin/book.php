@@ -49,16 +49,16 @@ function getDay(val) {
 }
 
 </script>
-<body style="background-image:url(images/bookback.jpg)">
-	<div class="header">
+<body style="background-image:url(m6.jpg)">
+	<div class="header" >
 		<ul>
-			<li style="float:left;border-right:none"><a href="ulogin.php" class="logo"><img src="images/cal.png" width="30px" height="30px"><strong> Skylabs </strong>Appointment Booking System</a></li>
+			<li style="float:left;border-right:none;"><a href="ulogin.php" ><strong>BetterMentalHealth Appointment Booking System </strong></a></li>
 			<li><a href="book.php">Book Now</a></li>
 			<li><a href="ulogin.php">Home</a></li>
 		</ul>
 	</div>
 	<form action="book.php" method="post">
-	<div class="sucontainer" style="background-image:url(images/bookback.jpg)">
+	<div class="sucontainer" style="background-color:purple">
 		<label><b>Name:</b></label><br>
 		<input type="text" placeholder="Enter Full name of patient" name="fname" required><br>
 		
@@ -67,7 +67,7 @@ function getDay(val) {
 		<input type="radio" name="gender" value="male">Male
 		<input type="radio" name="gender" value="other">Other<br><br>
 	
-		<label style="font-size:20px" >City:</label><br>
+		<label style="font-size:20px;" >City:</label><br>
 		<select name="city" id="city-list" class="demoInputBox"  onChange="getTown(this.value);" style="width:100%;height:35px;border-radius:9px">
 		<option value="">Select City</option>
 		<?php

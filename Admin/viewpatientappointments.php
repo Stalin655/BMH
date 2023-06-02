@@ -12,7 +12,7 @@ table{
 
 th{
 border: 4px solid black;
-	background-color: #4CAF50;
+	background-color: #f96d00;
     color: white;
 	text-align: left;
 }
@@ -24,7 +24,7 @@ tr,td{
 </style>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
 </head><?php include "dbconfig.php"; ?>
-<body style="background-image:url(images/cancelback.jpg)">
+<body style="background-image:url(m6.jpg)">
 <div class="header">
 				<ul>
 					<li style="float:left;border-right:none"><strong><?php session_start(); echo $_SESSION['user']; ?></strong></li>

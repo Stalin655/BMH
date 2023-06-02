@@ -2,10 +2,10 @@
 <head>
 <link rel="stylesheet" href="adminmain.css"> 
 </head>
-<body>
+<body style="background-image:url(m6.jpg)">
 
-<ul>
-<li class="dropdown"><font color="yellow" size="10">ADMIN MODE</font></li>
+<ul style="background-color:#41d8bf">
+<li class="dropdown"><font text-align="center" type="Arial"color="black" size="6"><strong>ADMIN MODE</strong></font></li>
 <br>
 <h2>
   <li class="dropdown">    
@@ -49,7 +49,6 @@
 </h2>
 <p>
 
-<center><h1>********WELCOME ADMIN*******</h1> 
 <?php
 session_start();	
 	if(isset($_POST['logout'])){
