@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body style="background-color: #f96d00" >
+<body style="background-image:url(m6.jpg)" >
 <link rel="stylesheet" href="main.css">
 			<div class="header">
 				<ul>

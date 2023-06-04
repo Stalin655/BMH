@@ -26,9 +26,9 @@ function getDoctorday(val) {
 
 </script>
 </head>
-<body background= "clinicview.jpg">
+<body style="background-image:url(m6.jpg)">
 <ul>
-<li class="dropdown"><font color="yellow" size="10">ADMIN MODE</font></li>
+<li class="dropdown"><font text-align="center" color="white" size="6">ADMIN MODE</font></li>
 <br>
 <h2>
   <li class="dropdown">    
@@ -69,7 +69,7 @@ function getDoctorday(val) {
 	
 </ul>
 </h2>
-<center><h1>REMOVE DOCTOR FROM A CLINIC</h1><hr>
+<center><h1 style="font-color:white">REMOVE DOCTOR FROM A CLINIC</h1><hr>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
 <label style="font-size:20px" >City:</label>
 		<select name="city" id="city-list" class="demoInputBox"  onChange="getState(this.value);">
