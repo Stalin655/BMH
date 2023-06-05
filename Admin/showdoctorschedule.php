@@ -35,6 +35,7 @@ tr,td{
     <div class="dropdown-content">
       <a href="adddoctor.php">Add Doctor</a>
       <a href="deletedoctor.php">Delete Doctor</a>
+      <a href="showdoctor.php">Show Doctor</a>
 	  <a href="showdoctorschedule.php">Show Doctor Schedule</a>
     </div>
   </li>

@@ -26,9 +26,9 @@ function getDoctorRegion(val) {
 
 </script>
 </head>
-<body background= "clinicview.jpg">
-<ul>
-<li class="dropdown"><font color="yellow" size="10">ADMIN MODE</font></li>
+<body style="background-color:#dfebed">
+<ul style="background-color:#77529e">
+<li class="dropdown"><font text-align="center" color="white" size="6">ADMIN MODE</font></li>
 <br>
 <h2>
   <li class="dropdown">    
@@ -70,7 +70,7 @@ function getDoctorRegion(val) {
 </ul>
 </h2>
 <center><h1>ASSIGN DOCTOR TO A CLINIC</h1><hr>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+<form style="background-color:#dfebed" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
 <label style="font-size:20px" >City:</label>
 		<select name="city" id="city-list" class="demoInputBox"  onChange="getState(this.value);getDoctorRegion(this.value);">
 		<option value="">Select City</option>

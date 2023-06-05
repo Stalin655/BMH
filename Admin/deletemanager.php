@@ -3,9 +3,73 @@
 <head>
 <link rel="stylesheet" href="adminmain.css"> 
 </head>
-<body background= "managerview.jpg">
-<ul>
-<li class="dropdown"><font color="yellow" size="10">ADMIN MODE</font></li>
+<?php
+session_start();
+include 'dbconfig.php';
+if(isset($_POST['Submit1']))
+{
+	$mid=$_POST['mid'];
+	$sql = "DELETE FROM manager WHERE MID= $mid ";
+	$sql1="update clinic set MID=0 where MID=$mid";
+	if (mysqli_query($conn, $sql))
+		{
+		echo "Record deleted successfully.Refreshing....";
+		header( "Refresh:3; url=deletemanager.php");
+		}
+	else
+		{
+			echo "Error deleting record: " . mysqli_error($conn);
+		}
+				if (mysqli_query($conn, $sql1)) 
+				{
+							echo "<h2>Record reseted in CLINIC TABLE!!</h2>";
+							echo "Please wait...Refreshing...";
+							header( "Refresh:2; url=deletemanager.php");
+
+				} 
+				else
+				{
+					echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
+				}
+				
+}
+if(isset($_POST['Submit2']))
+{
+	$mid=$_POST['managername'];
+	$sql = "DELETE FROM manager WHERE mid = $mid ";
+	$sql1="update clinic set MID=0 where MID=$mid";
+	if (mysqli_query($conn, $sql))
+		{
+		echo "Record deleted successfully.Refreshing....";
+		header( "Refresh:3; url=deletemanager.php");
+		}
+	else
+		{
+			echo "Error deleting record: " . mysqli_error($conn);
+		}
+				
+				if (mysqli_query($conn, $sql1)) 
+				{
+							echo "<h2>Record reseted in CLINIC TABLE!!</h2>";
+							echo "Please wait...Refreshing...";
+							header( "Refresh:2; url=deletemanager.php");
+
+				} 
+				else
+				{
+					echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
+				}
+
+}	
+if(isset($_POST['logout'])){
+		session_unset();
+		session_destroy();
+		header( "Refresh:1; url=alogin.php"); 
+	}
+?>			
+<body style="background-color:#dfebed">
+<ul style="background-color:#77529e">
+<li class="dropdown"><font text-align="center" color="white" size="6">ADMIN MODE</font></li>
 <br>
 <h2>
   <li class="dropdown">    
@@ -72,69 +136,6 @@ Select Name:<br><?php
 				
 				<button type="submit" name="Submit2">Delete by Name</button>
 </form>			
-<?php
-session_start();
-include 'dbconfig.php';
-if(isset($_POST['Submit1']))
-{
-	$mid=$_POST['mid'];
-	$sql = "DELETE FROM manager WHERE MID= $mid ";
-	$sql1="update clinic set MID=0 where MID=$mid";
-	if (mysqli_query($conn, $sql))
-		{
-		echo "Record deleted successfully.Refreshing....";
-		header( "Refresh:3; url=deletemanager.php");
-		}
-	else
-		{
-			echo "Error deleting record: " . mysqli_error($conn);
-		}
-				if (mysqli_query($conn, $sql1)) 
-				{
-							echo "<h2>Record reseted in CLINIC TABLE!!</h2>";
-							echo "Please wait...Refreshing...";
-							header( "Refresh:2; url=deletemanager.php");
 
-				} 
-				else
-				{
-					echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
-				}
-				
-}
-if(isset($_POST['Submit2']))
-{
-	$mid=$_POST['managername'];
-	$sql = "DELETE FROM manager WHERE mid = $mid ";
-	$sql1="update clinic set MID=0 where MID=$mid";
-	if (mysqli_query($conn, $sql))
-		{
-		echo "Record deleted successfully.Refreshing....";
-		header( "Refresh:3; url=deletemanager.php");
-		}
-	else
-		{
-			echo "Error deleting record: " . mysqli_error($conn);
-		}
-				
-				if (mysqli_query($conn, $sql1)) 
-				{
-							echo "<h2>Record reseted in CLINIC TABLE!!</h2>";
-							echo "Please wait...Refreshing...";
-							header( "Refresh:2; url=deletemanager.php");
-
-				} 
-				else
-				{
-					echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
-				}
-
-}	
-if(isset($_POST['logout'])){
-		session_unset();
-		session_destroy();
-		header( "Refresh:1; url=alogin.php"); 
-	}
-?>			
 </body>
 </html>

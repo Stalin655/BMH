@@ -24,11 +24,49 @@ function getManager(val) {
 	});
 }
 
+<?php
+session_start();
+include 'dbconfig.php';
+if(isset($_POST['Submit']))
+{
+	$cid=$_POST['clinic'];
+	$mid=$_POST['manager'];
+	$sql = "DELETE FROM manager_clinic WHERE CID= $cid AND MID= $mid";
+	$sql1="update clinic set MID = 0 where MID= $mid";
+
+	if (mysqli_query($conn, $sql))
+		{
+		echo "Record deleted successfully in manager_clinic table.Refreshing....";
+		header( "Refresh:2; url=deletemanagerclinic.php");
+		}
+	else
+		{
+			echo "Error deleting record: " . mysqli_error($conn);
+		}
+	if (mysqli_query($conn, $sql1)) 
+				{
+							echo "<h2>Record created successfully( CID=$cid MID=$mid )in CLINIC TABLE!!</h2>";
+							echo "Please wait...Refreshing...";
+							header( "Refresh:2; url=deletemanagerclinic.php");
+
+				} 
+				else
+				{
+					echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
+				}
+}
+
+if(isset($_POST['logout'])){
+		session_unset();
+		session_destroy();
+		header( "Refresh:1; url=alogin.php"); 
+	}
+?>		
 </script>
 </head>
-<body background= "clinicview.jpg">
-<ul>
-<li class="dropdown"><font color="yellow" size="10">ADMIN MODE</font></li>
+<body style="background-color:#dfebed">
+<ul style="background-color:#77529e">
+<li class="dropdown"><font text-align="center" color="white" size="6">ADMIN MODE</font></li>
 <br>
 <h2>
   <li class="dropdown">    
@@ -100,44 +138,7 @@ function getManager(val) {
 		
 		<button name="Submit" type="submit">Submit</button>
 	</form>
-<?php
-session_start();
-include 'dbconfig.php';
-if(isset($_POST['Submit']))
-{
-	$cid=$_POST['clinic'];
-	$mid=$_POST['manager'];
-	$sql = "DELETE FROM manager_clinic WHERE CID= $cid AND MID= $mid";
-	$sql1="update clinic set MID = 0 where MID= $mid";
-
-	if (mysqli_query($conn, $sql))
-		{
-		echo "Record deleted successfully in manager_clinic table.Refreshing....";
-		header( "Refresh:2; url=deletemanagerclinic.php");
-		}
-	else
-		{
-			echo "Error deleting record: " . mysqli_error($conn);
-		}
-	if (mysqli_query($conn, $sql1)) 
-				{
-							echo "<h2>Record created successfully( CID=$cid MID=$mid )in CLINIC TABLE!!</h2>";
-							echo "Please wait...Refreshing...";
-							header( "Refresh:2; url=deletemanagerclinic.php");
-
-				} 
-				else
-				{
-					echo "Error: " . $sql1 . "<br>" . mysqli_error($conn);
-				}
-}
-
-if(isset($_POST['logout'])){
-		session_unset();
-		session_destroy();
-		header( "Refresh:1; url=alogin.php"); 
-	}
-?>			
+	
 
 </body>
 </html>

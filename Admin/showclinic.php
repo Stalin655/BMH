@@ -25,9 +25,9 @@ tr,td{
 </style>
 
 </head>
-<body background= "clinicview.jpg">
-<ul>
-<li class="dropdown"><font color="yellow" size="10">ADMIN MODE</font></li>
+<body style="background-color:#dfebed">
+<ul style="background-color:#77529e">
+<li class="dropdown"><font text-align="center" color="white" size="6">ADMIN MODE</font></li>
 <br>
 <h2>
   <li class="dropdown">    

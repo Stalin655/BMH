@@ -2,9 +2,9 @@
 <head>
 <link rel="stylesheet" href="adminmain.css"> 
 </head>
-<body background= "managerview.jpg">
-<ul>
-<li class="dropdown"><font color="yellow" size="10">ADMIN MODE</font></li>
+<body style="background-color:#dfebed">
+<ul style="background-color:#77529e">
+<li class="dropdown"><font text-align="center" color="white" size="6">ADMIN MODE</font></li>
 <br>
 <h2>
   <li class="dropdown">    
@@ -46,7 +46,7 @@
 </ul>
 </h2>
 <center><h1>ADD MANAGER</h1><hr>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+<form style="background-color:#dfebed" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
   MID:<input type="number" name="mid" required>
   <br>
   Name: <input type="text" name="name" required>
