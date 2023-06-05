@@ -69,9 +69,9 @@ function getDoctorday(val) {
 	
 </ul>
 </h2>
-<center><h1 style="font-color:white">REMOVE DOCTOR FROM A CLINIC</h1><hr>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-<label style="font-size:20px" >City:</label>
+<center ><h1 ></h1><hr>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> <br> 
+<br>
 		<select name="city" id="city-list" class="demoInputBox"  onChange="getState(this.value);">
 		<option value="">Select City</option>
 		<?php
@@ -87,12 +87,12 @@ function getDoctorday(val) {
 		</select>
         
 	
-		<label style="font-size:20px" >Clinic:</label>
+		<br> <br>
 		<select id="clinic-list" name="clinic" onchange="getDoctorday(this.value);" >
 		<option value="">Select Clinic</option>
 		</select>
 		
-		<label style="font-size:20px" >Doctor & Time:</label>
+		<br> <br>
 		<select name="doctor" id="doctor-list" >
 		<option value="">Select Day & Time</option>
 		</select>

@@ -13,7 +13,7 @@ table{
 
 th{
 border: 4px solid black;
-	background-color: #4CAF50;
+	background-color:#ff5722;
     color: white;
 	text-align: left;
 }
@@ -25,17 +25,16 @@ tr,td{
 </style>
 
 </head>
-<body background= "doctordesk.jpg">
-<ul>
-<li class="dropdown"><font color="yellow" size="10">ADMIN MODE</font></li>
+<body style="background-image:url(m6.jpg)">
+<ul style="background-color:#2d4059">
+<li class="dropdown"><font text-align="center" color="white" size="6">ADMIN MODE</font></li>
 <br>
 <h2>
-  <li class="dropdown">    
+  <li class="dropdown" >    
   <a href="javascript:void(0)" class="dropbtn">Doctor</a>
     <div class="dropdown-content">
       <a href="adddoctor.php">Add Doctor</a>
       <a href="deletedoctor.php">Delete Doctor</a>
-      <a href="showdoctor.php">Show Doctor</a>
 	  <a href="showdoctorschedule.php">Show Doctor Schedule</a>
     </div>
   </li>
@@ -68,7 +67,7 @@ tr,td{
 	
 </ul>
 </h2>
-<center><h1>SHOW DOCTOR SCHEDULE</h1><hr>
+<center>
 <?php
 session_start();
 $con = mysqli_connect('localhost','root','','wt_database');
