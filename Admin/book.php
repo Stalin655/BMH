@@ -49,62 +49,6 @@ function getDay(val) {
 }
 
 </script>
-<body style="background-image:url(m6.jpg)">
-	<div class="header" >
-		<ul>
-			<li style="float:left;border-right:none;"><cd BMHa href="ulogin.php" ><strong>BetterMentalHealth Appointment Booking System </strong></a></li>
-			<li><a href="book.php">Book Now</a></li>
-			<li><a href="ulogin.php">Home</a></li>
-		</ul>
-	</div>
-	<form action="book.php" method="post">
-	<div class="sucontainer" style="background-color:purple">
-		<label><b>Name:</b></label><br>
-		<input type="text" placeholder="Enter Full name of patient" name="fname" required><br>
-		
-		<label><b>Gender</b></label><br>
-		<input type="radio" name="gender" value="female">Female
-		<input type="radio" name="gender" value="male">Male
-		<input type="radio" name="gender" value="other">Other<br><br>
-	
-		<label style="font-size:20px;" >City:</label><br>
-		<select name="city" id="city-list" class="demoInputBox"  onChange="getTown(this.value);" style="width:100%;height:35px;border-radius:9px">
-		<option value="">Select City</option>
-		<?php
-		$sql1="SELECT distinct(city) FROM clinic";
-         $results=$conn->query($sql1); 
-		while($rs=$results->fetch_assoc()) { 
-		?>
-		<option value="<?php echo $rs["city"]; ?>"><?php echo $rs["city"]; ?></option>
-		<?php
-		}
-		?>
-		</select>
-        <br>
-	
-		<label style="font-size:20px" >Town:</label><br>
-		<select id="town-list" name="Town" onChange="getClinic(this.value);" style="width:100%;height:35px;border-radius:9px">
-		<option value="">Select Town</option>
-		</select><br>
-		
-		<label style="font-size:20px" >Clinic:</label><br>
-		<select id="clinic-list" name="Clinic" onChange="getDoctorday(this.value);" style="width:100%;height:35px;border-radius:9px">
-		<option value="">Select Clinic</option>
-		</select><br>
-		
-		<label style="font-size:20px" >Doctor:</label><br>
-		<select id="doctor-list" name="Doctor" onChange="getDate(this.value);" style="width:100%;height:35px;border-radius:9px">
-		<option value="">Select Doctor</option>
-		</select><br>
-		
-		
-		<label><b>Date of Visit:</b></label><br>
-		<input type="date" name="dov" onChange="getDay(this.value);" min="<?php echo date('Y-m-d');?>" max="<?php echo date('Y-m-d',strtotime('+7 day'));?>" required><br><br>
-		<div id="datestatus"> </div>
-		
-		<div class="container">
-			<button type="submit" style="position:center" name="submit" value="Submit">Submit</button>
-		</div>
 <?php
 session_start();
 if(isset($_POST['submit']))
@@ -114,19 +58,19 @@ if(isset($_POST['submit']))
 		$fname=$_POST['fname'];
 		$gender=$_POST['gender'];
 		$username=$_SESSION['username'];
-		$cid=$_POST['Clinic'];
+		$clinic=$_POST['Clinic'];
 		$did=$_POST['Doctor'];
 		$dov=$_POST['dov'];
 		$status="Booking Registered.Wait for the update";
 		$timestamp=date('Y-m-d H:i:s');
-		$sql = "INSERT INTO book (Username,Fname,Gender,CID,DID,DOV,Timestamp,Status) VALUES ('$username','$fname','$gender','$cid','$did','$dov','$timestamp','$status') ";
+		$sql = "INSERT INTO book (Username,Fname,Gender,Clinic,DID,DOV,Timestamp,Status) VALUES ('$username','$fname','$gender','$clinic','$did','$dov','$timestamp','$status') ";
 		if(!empty($_POST['fname'])&&!empty($_POST['gender'])&&!empty($_SESSION['username'])&&!empty($_POST['Clinic'])&&!empty($_POST['Doctor']) && !empty($_POST['dov']))
 		{
 			$checkday = strtotime($dov);
 			$compareday = date("l", $checkday);
 			$flag=0;
 			require_once("dbconfig.php");
-			$query ="SELECT * FROM doctor_availability WHERE DID = '" .$did. "' AND CID='".$cid."'";
+			$query ="SELECT * FROM doctor_availability WHERE DID = '" .$did. "' AND Clinic='".$clinic."'";
 			$results = $conn->query($query);
 			while($rs=$results->fetch_assoc())
 			{
@@ -160,6 +104,63 @@ if(isset($_POST['submit']))
 		}
 }
 ?>
+<body style="background-image:url(images/bookback.jpg)">
+	<div class="header">
+		<ul>
+			<li style="float:left;border-right:none"><a href="ulogin.php" class="logo"><strong> Niskize Counselling Center </strong>Appointment Booking System</a></li>
+			<li><a href="book.php">Book Now</a></li>
+			<li><a href="ulogin.php">Home</a></li>
+		</ul>
+	</div>
+	<form action="book.php" method="post">
+	<div class="sucontainer" style="background-image:url(images/bookback.jpg)">
+		<label><b>Name:</b></label><br>
+		<input type="text" placeholder="Enter Full name of patient" name="fname" required><br>
+		
+		<label><b>Gender</b></label><br>
+		<input type="radio" name="gender" value="female">Female
+		<input type="radio" name="gender" value="male">Male
+		<input type="radio" name="gender" value="other">Other<br><br>
+	
+		<label style="font-size:20px" >City:</label><br>
+		<select name="city" id="city-list" class="demoInputBox"  onChange="getTown(this.value);" style="width:100%;height:35px;border-radius:9px">
+		<option value="">Select City</option>
+		<?php
+		$sql1="SELECT distinct(city) FROM clinic";
+         $results=$conn->query($sql1); 
+		while($rs=$results->fetch_assoc()) { 
+		?>
+		<option value="<?php echo $rs["city"]; ?>"><?php echo $rs["city"]; ?></option>
+		<?php
+		}
+		?>
+		</select>
+        <br>
+	
+		<label style="font-size:20px" >Town:</label><br>
+		<select id="town-list" name="Town" onChange="getClinic(this.value);" style="width:100%;height:35px;border-radius:9px">
+		<option value="">Select Town</option>
+		</select><br>
+		
+		<label style="font-size:20px" >Clinic:</label><br>
+		<select id="Clinic" name="Clinic" onChange="getDoctorday(this.value);" style="width:100%;height:35px;border-radius:9px">
+		<option value="">Select Clinic</option>
+		</select><br>
+		
+		<label style="font-size:20px" >Doctor:</label><br>
+		<select id="doctor-list" name="Doctor" onChange="getDate(this.value);" style="width:100%;height:35px;border-radius:9px">
+		<option value="">Select Doctor</option>
+		</select><br>
+		
+		
+		<label><b>Date of Visit:</b></label><br>
+		<input type="date" name="dov" onChange="getDay(this.value);" min="<?php echo date('Y-m-d');?>" max="<?php echo date('Y-m-d',strtotime('+7 day'));?>" required><br><br>
+		<div id="datestatus"> </div>
+		
+		<div class="container">
+			<button type="submit" style="position:center" name="submit" value="Submit">Submit</button>
+		</div>
+
 	</form>
 </body>
 </html>
